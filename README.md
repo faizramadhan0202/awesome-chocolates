@@ -42,6 +42,7 @@ where salesperson like 'B%';
 select * from people
 where salesperson like '%B%';
 
+
 ### Using CASE to create branching logic in SQL
 
 ```
@@ -53,6 +54,7 @@ select 	SaleDate, Amount,
 		end as 'Amount category'
 from sales;
 ```
+
 
 ### GROUP BY in SQL
 ```
