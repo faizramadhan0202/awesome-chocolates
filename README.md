@@ -1,6 +1,10 @@
 # awesome_chocolates
 
-### Explorer Data Using Mysql
+Explorer Data Using Mysql
+
+Skills used : Operator, Join, CTE, LIKE, CASE WHEN, GROUP BY
+Tools       : MySql
+
 
 ### Showing sales data where amount is greater than 10,000 by descending order
 ```
