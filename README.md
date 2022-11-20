@@ -1,5 +1,7 @@
 # awesome_chocolates
 
+### Explorer Data Using Mysql
+
 ### Showing sales data where amount is greater than 10,000 by descending order
 ```
 select * from sales
