@@ -38,10 +38,12 @@ Right Join People ON Sales.SPID = People.SPID
 ```
 select * from people
 where salesperson like 'B%';
+```
 
+```
 select * from people
 where salesperson like '%B%';
-
+```
 
 ### Using CASE to create branching logic in SQL
 
@@ -57,6 +59,7 @@ from sales;
 
 
 ### GROUP BY in SQL
+
 ```
 select team, count(*) from people
 group by team
