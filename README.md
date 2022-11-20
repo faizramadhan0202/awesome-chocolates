@@ -2,7 +2,7 @@
 
 Explorer Data Using Mysql
 
-Skills used : Operator, Join, CTE, LIKE, CASE WHEN, GROUP BY
+Skills used : Operator, Join, CTE, LIKE, CASE WHEN, GROUP BY <br>
 Tools       : MySql
 
 
