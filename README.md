@@ -70,3 +70,40 @@ from sales;
 select team, count(*) from people
 group by team
 ```
+
+### ORDER BY, GROUP BY in SQL
+
+```
+SELECT Amount, MAX(Amount)
+FROM `sales` 
+group by 1
+order by amount desc
+```
+
+### MIN MAX in SQL
+
+```
+SELECT MIN(Amount)
+FROM `sales` 
+```
+
+```
+SELECT MAX(Amount)
+FROM `sales` 
+```
+
+### Distinct in SQL
+
+```
+SELECT distinct(GeoID), Count(GeoID) as Hasil
+FROM `sales`
+group by 1
+order by 1 asc
+```
+
+```
+SELECT distinct(PID), Count(PID) as Hasil
+FROM `sales`
+group by 1
+order by 2 desc
+```
