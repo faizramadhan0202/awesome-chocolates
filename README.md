@@ -1,58 +1,61 @@
-# awesome_chocolates
+# awesome_chocolates SQL - Jupyter Notebook
 
-Explorer Data Using Mysql
+Explorer Data Using Jupyter Notebook + Mysql
 
-Skills used : Operator, Join, CTE, LIKE, CASE WHEN, GROUP BY <br>
-Tools       : MySql
+Skills used : show tables, describe, select, disticnt, join, aggregate functions, Operator, Like, Case When <br>
+Tools       : Jupyter Notebook + Mysql
 
-
-### Showing sales data where amount is greater than 10,000 by descending order
+### Show
 ```
-select * from sales
-where amount > 10000
-order by amount desc;
+show tables;
 ```
 
-### BETWEEN condition in SQL with < & > operators
+### Describe
 ```
-select * from sales
-where boxes >0 and boxes <=50;
+desc geo;
 ```
 
-### Using year() function to select all data in a specific year
+### Select
 ```
-select SaleDate, Amount from sales
-where amount > 10000 and year(SaleDate) = 2022
-order by amount desc;
+select * from geo;
+```
+
+### Distinct
+```
+SELECT distinct(GeoID), Count(GeoID) as Hasil
+FROM `sales`
+group by 1
+order by 1 asc;
 ```
 
 ### Join
 ```
 SELECT *
 FROM Geo
-Inner Join Sales ON Geo.GeoID = Sales.GeoID
+Inner Join Sales ON Geo.GeoID = Sales.GeoID order by geo asc limit 20;
 ```
 
+### Aggregate Functions
 ```
-SELECT *
-FROM Sales
-Right Join People ON Sales.SPID = People.SPID
+select GeoID, sum(Amount), avg(Amount), sum(Boxes)
+from sales
+group by GeoID;
 ```
 
-### LIKE operator in SQL
+### Operator
+```
+select GeoID, Amount, Boxes 
+from sales
+where boxes >0 and boxes <=50 order by GeoID asc limit 20
+```
 
+### Like
 ```
 select * from people
 where salesperson like 'B%';
 ```
 
-```
-select * from people
-where salesperson like '%B%';
-```
-
-### Using CASE to create branching logic in SQL
-
+### Case When
 ```
 select 	SaleDate, Amount,
 		case 	when amount < 1000 then 'Under 1k'
@@ -60,50 +63,6 @@ select 	SaleDate, Amount,
                 when amount < 10000 then 'Under 10k'
 			else '10k or more'
 		end as 'Amount category'
-from sales;
-```
-
-
-### GROUP BY in SQL
-
-```
-select team, count(*) from people
-group by team
-```
-
-### ORDER BY, GROUP BY in SQL
-
-```
-SELECT Amount, MAX(Amount)
-FROM `sales` 
-group by 1
-order by amount desc
-```
-
-### MIN MAX in SQL
-
-```
-SELECT MIN(Amount)
-FROM `sales` 
-```
-
-```
-SELECT MAX(Amount)
-FROM `sales` 
-```
-
-### Distinct in SQL
-
-```
-SELECT distinct(GeoID), Count(GeoID) as Hasil
-FROM `sales`
-group by 1
-order by 1 asc
-```
-
-```
-SELECT distinct(PID), Count(PID) as Hasil
-FROM `sales`
-group by 1
-order by 2 desc
+from sales
+limit 20
 ```
